@@ -1,4 +1,4 @@
 ulg-hpc
 =======
 
-Projects for High Performance Computing
+Projects for High Performance Computing.
