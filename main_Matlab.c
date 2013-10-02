@@ -106,7 +106,7 @@ void write_end(FILE* out1, FILE* out2, boolean verb){
    if(out2 != NULL){
       fseek(out2, -3, SEEK_CUR);
       fprintf(out2, "];\r\n\r\n");
-      fprintf(out2, "figure;\r\nfor( sample in samples )\r\n   plot(sample[2], sample[3], sample[4], 'ro');\r\n   plot(sample[5], sample[6], smaple[7], 'bo');\r\n   pause(0.5);\r\nend\r\n");
+      fprintf(out2, "figure; hold on;\r\nfor sample = transpose(samples)\r\n   plot3(sample(2), sample(3), sample(4), 'rd:');\r\n   plot3(sample(5), sample(6), sample(7), 'bd:');\r\n   pause(0.05);\r\nend\r\n");
    }
 }
 
