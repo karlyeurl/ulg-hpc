@@ -9,7 +9,7 @@
 #define FALSE 0
 
 #define CONST_G 0.0000000000667384
-#define DOUBLE_EPSILON 0.000001
+#define DOUBLE_EPSILON 0.0000000001
 
 void write_init(FILE* out1, FILE* out2, boolean verb, double m1, vector p1, vector v1, double m2, vector p2, vector v2, double dt, double t_final, double dt_output);
 
