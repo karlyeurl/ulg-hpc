@@ -6,9 +6,9 @@
 #define VECTORLIB_ULG
 
 struct vector_t {
-   double x;
-   double y;
-   double z;
+   long double x;
+   long double y;
+   long double z;
 };
 
 typedef struct vector_t vector;
@@ -44,7 +44,7 @@ vector subv(vector v1, vector v2);
  * 
  * @return A vector containing the result.
  */
-vector scalev(vector v, double scale);
+vector scalev(vector v, long double scale);
 
 /**
  * Scalar product of two vectors.
@@ -53,9 +53,9 @@ vector scalev(vector v, double scale);
  *
  * @param v2 The second vector. Order doesn't matter.
  * 
- * @return A double containing the result.
+ * @return A long double containing the result.
  */
-double productv(vector v1, vector v2);
+long double productv(vector v1, vector v2);
 
 /**
  * Cross product of two vectors. Order matters!
@@ -75,7 +75,7 @@ vector xproductv(vector v1, vector v2);
  * 
  * @return The norm of the vector.
  */
-double normv(vector v);
+long double normv(vector v);
 
 /**
  * Prints a vector to the stdout.

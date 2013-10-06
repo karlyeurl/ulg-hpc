@@ -28,7 +28,7 @@ vector subv(vector v1, vector v2) {
    return v;
 }
 
-vector scalev(vector v, double scale) {
+vector scalev(vector v, long double scale) {
    vector w;
    w.x = v.x * scale;
    w.y = v.y * scale;
@@ -36,13 +36,13 @@ vector scalev(vector v, double scale) {
    return w;
 }
 
-double normv(vector v) {
-   double norm = sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
+long double normv(vector v) {
+   long double norm = sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
    return norm;
 }
 
-double productv(vector v1, vector v2) {
-   double prod = v1.x * v2.x + v1.y * v2.y + v1.z * v2.z;
+long double productv(vector v1, vector v2) {
+   long double prod = v1.x * v2.x + v1.y * v2.y + v1.z * v2.z;
    return prod;
 }
 
@@ -56,5 +56,5 @@ vector xproductv(vector v1, vector v2) {
 }
 
 void printv(vector v) {
-   printf("%f %f %f\n", v.x, v.y, v.z);
+   printf("%Lf %Lf %Lf", v.x, v.y, v.z);
 }

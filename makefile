@@ -1,5 +1,5 @@
 
-CC = gcc
+CC = clang
 EXEC = a.out
 FILES = main_Matlab.o vectorlib.o
 LDFLAGS = -lm -std=c99
