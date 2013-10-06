@@ -65,8 +65,8 @@ int main(int argc, char* argv[]){
       long double norm = normv(dp);
       
       // compute F
-      vector f = scalev(dp, - m1 * m2 * CONST_G / norm * norm * norm); 
-      
+      vector f = scalev(dp, - m1 * m2 * CONST_G / (norm * norm * norm)); 
+
       // compute positions at time t
       vector new_p1 = addv(subv(scalev(f, - dt * dt / m1), p10) , scalev(p11, 2));
       vector new_p2 = addv(subv(scalev(f, dt * dt / m2), p20) , scalev(p21, 2));
