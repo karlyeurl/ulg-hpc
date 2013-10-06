@@ -105,7 +105,7 @@ void write_end(FILE* out1, FILE* out2, boolean verb){
    if(out2 != NULL){
       fseek(out2, -3, SEEK_CUR);
       fprintf(out2, "];\r\n\r\n");
-      fprintf(out2, "figure; hold on; grid on;\r\naxis([ min(min(samples(:,2)),min(samples(:,5))), max(max(samples(:,2)),max(samples(:,5))), min(min(samples(:,3)),min(samples(:,6))), max(max(samples(:,3)),max(samples(:,6))), min(min(samples(:,4)),min(samples(:,7))), max(max(samples(:,4)),max(samples(:,7))) ]);\r\nfor sample = transpose(samples)\r\n   plot3(sample(2), sample(3), sample(4), 'rd:');\r\n   plot3(sample(5), sample(6), sample(7), 'bd:');\r\n   pause(0.05);\r\nend\r\n");
+      fprintf(out2, "figure; hold on; grid on;\r\n% ~axis([ min(min(samples(:,2)),min(samples(:,5))), max(max(samples(:,2)),max(samples(:,5))), min(min(samples(:,3)),min(samples(:,6))), max(max(samples(:,3)),max(samples(:,6))), min(min(samples(:,4)),min(samples(:,7))), max(max(samples(:,4)),max(samples(:,7))) ]);\r\nfor sample = transpose(samples)\r\n   plot3(sample(2), sample(3), sample(4), 'rd:');\r\n   plot3(sample(5), sample(6), sample(7), 'bd:');\r\n   pause(0.05);\r\nend\r\n");
    }
 }
 

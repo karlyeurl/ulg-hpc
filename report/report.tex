@@ -26,6 +26,7 @@
 \usepackage{graphicx} % Required for the inclusion of images
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{geometry}
 \usepackage{float}
 \usepackage{amsmath, amssymb}
 \usepackage{mathtools}
@@ -35,6 +36,7 @@
 %\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
 
 %\usepackage{times} % Uncomment to use the Times New Roman font
+\geometry{hmargin=2cm,vmargin=2cm}
 
 %----------------------------------------------------------------------------------------
 %  DOCUMENT INFORMATION
@@ -42,7 +44,7 @@
 
 \title{Assignement 1 \\ High Performance Scientific Computing} % Title
 
-\author{Pierre \textsc{Lorent} — Damien \textsc{Smeets}} % Author name
+\author{Pierre \textsc{Lorent} -- Damien \textsc{Smeets}} % Author name
 
 \date{\today} % Date for the report
 
@@ -61,15 +63,23 @@ Assistant: & Amaury \textsc{Johnen}
 \end{tabular}
 \end{center}
 
-\section{NAT}
-\subsection{Generalities}
-\subsubsection*{Exercice 1}
+\section*{Implementation}
+We organized the code in two parts: the main computation unit and a library allowing to perform basic vector operations. This choice may induce some additionnal operations during computation but avoids the introduction of redundancy into the code, thus making it easier to read and to verify the formulae.\\
+
+As the equations given are rather simple and imply a small number of variables, the computation only requires one loop to iterate and compute the new positions depending on the 2 previous positions and the current speed.\\
+
+As the step interval and the output interval may be different, we also take into account the case where outputs are asked at a time where no data is available. In this particular case, the previous data is provided whith the computation time. Example: with \texttt{(dt, dt\_out) = (1, 4.5)}, we will have an output of the position at \texttt{[0, 4, 9, 13, 18]}.
+
+
+\subsection*{Additional features}
+After the implementation of the required functionalities, we decided to add some interesting features to allow a deeper analysis of the computed data. The final version of the code includes two options:
 \begin{itemize}
-\item Table making the translation between ports and hosts. You know what this is.
-\item Difference between a static NAT and a dynamic NAT. Static are pre-configured, dynamic takes care of the mapping itself. Static allow servers to be behind NATs.
-\item \begin{itemize}\item Advantages: security towards incoming attacks, public IP pool reduced, IAP can be easily changed, and internal network can be modified without notice.
-\item Disadvantages: Modifies the packets, performance, no IPSEC without tunneling…\end{itemize}
+\item \texttt{-v} launches the program in verbose mode.
+\item \texttt{-m} allows to specify a secondary output file to produce a \textsc{Matlab} file with the results. This allows to have a visual feedback on the global evolution of the positions.
 \end{itemize}
+
+The extended syntax to use these features is:\\
+\texttt{./a.out input.dat output.dat [-v] [-m <filename>]}
 
 %\begin{table}[H]
 %\begin{center}
