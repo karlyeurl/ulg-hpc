@@ -83,7 +83,10 @@ The extended syntax to use these features is:\\
 
 
 \section*{Results}
-lol ptdr
+We first tried our implementation with real-life parameters: the Earth around the Sun (shown on Fig. \ref{fig:earthsun}), a geostationnary satellite around the Earth (shown on Fig. \ref{fig:satgeo}) and an example of Newton's Cannon (on Fig. \ref{fig:nc}).\\
+
+Then we tried to find parameters that could model a binary star system (which is called the two-body problem). We did eventually find something that looks like a binary star system, but the two stars are much too close from each other, and it's spinning way too fast. However, it gives some interesting insight on how it can work (we put \texttt{z} axis velocities as well for fun and experimentation). It will also give us the opportunity to discuss the method's limits: the $\Delta t$ here becomes very relevant. Figure \ref{fig:sample} shows the same initial conditions, but with a different $\Delta t$ (two files are provided to illustrate this: \texttt{input\_dt\_bad.dat} and \texttt{input\_dt\_good.dat}). 
+
 \subsection*{Figures}
 \begin{figure}[H]
         \centering
@@ -106,7 +109,7 @@ lol ptdr
                 \centering
                 \includegraphics[width=\textwidth]{img/nc}
                 \caption{Surface (green) -- Projectile (blue)\\With \texttt{input\_newtons\_cannon.dat}}
-                \label{fig:satgeo}
+                \label{fig:nc}
         \end{subfigure}
         \caption{Orbits around a significant mass. Note the scale difference.\\Newton's Cannon from the Earth's surface.}\label{fig:orbits}
 \end{figure}
@@ -118,7 +121,7 @@ lol ptdr
                 \centering
                 \includegraphics[width=\textwidth]{img/binary_xy}
                 \caption{Two-body problem (2D)}
-                \label{fig:earthsun}
+                \label{fig:bin}
         \end{subfigure}%
         ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
           %(or a blank line to force the subfigure onto a new line)
@@ -126,16 +129,36 @@ lol ptdr
                 \centering
                 \includegraphics[width=\textwidth]{img/binar_3d}
                 \caption{Two-body problem (3D)}
-                \label{fig:satgeo}
+                \label{fig:bin3D}
         \end{subfigure}
-        \caption{The two-body symmetric problem. Barycenter is in (0,0).}\label{fig:twobody}
+        \caption{The two-body symmetric problem. Barycenter is at (0,0).\\With \texttt{input\_two\_body\_problem.dat}}\label{fig:twobody}
 \end{figure}
 
 \begin{figure}[H]
-  \centering
-  \includegraphics[width=1\textwidth]{img/g_k}
-  \caption{Two-body problem thrown out of balance.}\label{fig:gk}
+        \centering
+%         \hspace{-0.5cm}
+        \begin{subfigure}[b]{0.7\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{img/g_k}
+                \caption{Bad sampling}
+                \label{fig:gk}
+        \end{subfigure}%
+        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{0.25\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{img/g_k_balanced}
+                \caption{Good sampling}
+                \label{fig:gkfixed}
+        \end{subfigure}
+        \caption{Unbalanced two-body problem with and without sampling problem.}\label{fig:sample}
 \end{figure}
+
+%\begin{figure}[H]
+%  \centering
+%  \includegraphics[width=1\textwidth]{img/g_k}
+%  \caption{Two-body problem thrown out of balance by bad sampling.}\label{fig:gk}
+%\end{figure}
 
 %\begin{table}[H]
 %\begin{center}

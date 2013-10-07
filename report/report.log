@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Arch Linux) (format=pdflatex 2013.9.24)  7 OCT 2013 15:33
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Arch Linux) (format=pdflatex 2013.9.24)  7 OCT 2013 16:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -595,26 +595,7 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 
 (/usr/share/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
-)) (./report.aux
-
-LaTeX Warning: Label `fig:satgeo' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:satgeo' multiply defined.
-
-
-LaTeX Warning: Label `fig:earthsun' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:earthsun' multiply defined.
-
-
-LaTeX Warning: Label `fig:satgeo' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:satgeo' multiply defined.
-
-)
+)) (./report.aux)
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
@@ -760,71 +741,80 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 77.
 
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
+
+ []
+
 <img/sun_upz_earth_roty.png, id=1, 576.554pt x 661.672pt>
 File: img/sun_upz_earth_roty.png Graphic file (type png)
 
 <use img/sun_upz_earth_roty.png>
-Package pdftex.def Info: img/sun_upz_earth_roty.png used on input line 93.
+Package pdftex.def Info: img/sun_upz_earth_roty.png used on input line 96.
 (pdftex.def)             Requested size: 150.14671pt x 172.31335pt.
 
 <img/earth_sat.png, id=2, 576.554pt x 662.475pt>
 File: img/earth_sat.png Graphic file (type png)
  <use img/earth_sat.png>
-Package pdftex.def Info: img/earth_sat.png used on input line 101.
+Package pdftex.def Info: img/earth_sat.png used on input line 104.
 (pdftex.def)             Requested size: 150.14671pt x 172.52248pt.
 
 <img/nc.png, id=3, 576.554pt x 661.672pt>
 File: img/nc.png Graphic file (type png)
  <use img/nc.png>
-Package pdftex.def Info: img/nc.png used on input line 107.
+Package pdftex.def Info: img/nc.png used on input line 110.
 (pdftex.def)             Requested size: 150.14671pt x 172.31335pt.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<img/binary_xy.png, id=16, 576.554pt x 644.809pt>
+<img/binary_xy.png, id=17, 576.554pt x 644.809pt>
 File: img/binary_xy.png Graphic file (type png)
  <use img/binary_xy.png>
-Package pdftex.def Info: img/binary_xy.png used on input line 119.
+Package pdftex.def Info: img/binary_xy.png used on input line 122.
 (pdftex.def)             Requested size: 150.14671pt x 167.92188pt.
 
-<img/binar_3d.png, id=17, 576.554pt x 661.672pt>
+<img/binar_3d.png, id=18, 576.554pt x 661.672pt>
 File: img/binar_3d.png Graphic file (type png)
  <use img/binar_3d.png>
-Package pdftex.def Info: img/binar_3d.png used on input line 127.
+Package pdftex.def Info: img/binar_3d.png used on input line 130.
 (pdftex.def)             Requested size: 150.14671pt x 172.31335pt.
 
-<img/g_k.png, id=18, 1154.714pt x 307.549pt>
+<img/g_k.png, id=19, 1154.714pt x 307.549pt>
 File: img/g_k.png Graphic file (type png)
  <use img/g_k.png>
-Package pdftex.def Info: img/g_k.png used on input line 136.
-(pdftex.def)             Requested size: 500.484pt x 133.29936pt.
+Package pdftex.def Info: img/g_k.png used on input line 142.
+(pdftex.def)             Requested size: 350.33727pt x 93.3072pt.
+
+<img/g_k_balanced.png, id=20, 383.834pt x 319.594pt>
+File: img/g_k_balanced.png Graphic file (type png)
+
+<use img/g_k_balanced.png>
+Package pdftex.def Info: img/g_k_balanced.png used on input line 150.
+(pdftex.def)             Requested size: 125.12099pt x 104.17891pt.
  [2 <./img/sun_upz_earth_roty.png (PNG copy)> <./img/earth_sat.png (PNG copy)> 
 <./img/nc.png (PNG copy)> <./img/binary_xy.png (PNG copy)> <./img/binar_3d.png 
-(PNG copy)> <./img/g_k.png (PNG copy)>] (./report.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+(PNG copy)> <./img/g_k.png (PNG copy)> <./img/g_k_balanced.png (PNG copy)>] (./
+report.aux) ) 
 Here is how much of TeX's memory you used:
- 13063 strings out of 493311
- 252380 string characters out of 6143650
- 290405 words of memory out of 5000000
- 16325 multiletter control sequences out of 15000+600000
+ 13078 strings out of 493311
+ 252617 string characters out of 6143650
+ 292451 words of memory out of 5000000
+ 16339 multiletter control sequences out of 15000+600000
  15084 words of font info for 60 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 41i,8n,38p,393b,528s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/s
-hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmtt9.pfb>
-Output written on report.pdf (2 pages, 240774 bytes).
+ 41i,8n,38p,744b,528s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
+/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
+7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/shar
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmtt9.pfb>
+Output written on report.pdf (2 pages, 278483 bytes).
 PDF statistics:
- 53 PDF objects out of 1000 (max. 8388607)
- 33 compressed objects within 1 object stream
+ 58 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
