@@ -81,6 +81,62 @@ After the implementation of the required functionalities, we decided to add some
 The extended syntax to use these features is:\\
 \texttt{./a.out input.dat output.dat [-v] [-m <filename>]}
 
+
+\section*{Results}
+lol ptdr
+\subsection*{Figures}
+\begin{figure}[H]
+        \centering
+%         \hspace{-0.5cm}
+        \begin{subfigure}[b]{0.3\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{img/sun_upz_earth_roty}
+                \caption{Sun (blue) -- Earth (red)\\With \texttt{input\_sun\_earth.dat}}
+                \label{fig:earthsun}
+        \end{subfigure}%
+        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{0.3\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{img/earth_sat}
+                \caption{Earth (red) -- Satellite (blue)\\With \texttt{input\_earth\_sat.dat}}
+                \label{fig:satgeo}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{img/nc}
+                \caption{Surface (green) -- Projectile (blue)\\With \texttt{input\_newtons\_cannon.dat}}
+                \label{fig:satgeo}
+        \end{subfigure}
+        \caption{Orbits around a significant mass. Note the scale difference.\\Newton's Cannon from the Earth's surface.}\label{fig:orbits}
+\end{figure}
+
+\begin{figure}[H]
+        \centering
+%         \hspace{-0.5cm}
+        \begin{subfigure}[b]{0.3\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{img/binary_xy}
+                \caption{Two-body problem (2D)}
+                \label{fig:earthsun}
+        \end{subfigure}%
+        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{0.3\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{img/binar_3d}
+                \caption{Two-body problem (3D)}
+                \label{fig:satgeo}
+        \end{subfigure}
+        \caption{The two-body symmetric problem. Barycenter is in (0,0).}\label{fig:twobody}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{img/g_k}
+  \caption{Two-body problem thrown out of balance.}\label{fig:gk}
+\end{figure}
+
 %\begin{table}[H]
 %\begin{center}
 %\rowcolors{2}{light-gray}{medium-gray}
