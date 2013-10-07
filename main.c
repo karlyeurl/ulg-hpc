@@ -85,7 +85,6 @@ int main(int argc, char* argv[]){
    fclose(input_file);
    fclose(output_file);
    
-   printf("done.\r\n\r\n"); 
    return EXIT_SUCCESS;
 }
 
@@ -98,7 +97,7 @@ void write_init(FILE* out1, FILE* out2, boolean verb, long double m1, vector p1,
       printf("\r\nComputed Data\r\n-------------\r\n");
    }
    if(out2 != NULL){
-      fprintf(out2, "% Matlab simulation script\r\n\r\nt_end = %Lf;\r\ndt_computation = %Lf;\r\ndt_sample = %Lf;\r\n\r\nm1 = %Lf; m2 = %Lf;\r\n\r\nsamples = [\r\n", t_final, dt, dt_output, m1, m2);
+      fprintf(out2, "t_end = %Lf;\r\ndt_computation = %Lf;\r\ndt_sample = %Lf;\r\n\r\nm1 = %Lf; m2 = %Lf;\r\n\r\nsamples = [\r\n", t_final, dt, dt_output, m1, m2);
    }
 }
 
