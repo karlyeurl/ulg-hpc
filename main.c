@@ -1,15 +1,38 @@
+/**
+ * Implementation of a simulation of gravitational interaction between two bodies.
+ * INFO-0939 during the academic year 2013-2014.
+ *
+ * Copyright 2013 Damien Smeets and Pierre Lorent.
+ *
+ * This code is licensed under the WTFPL (http://sam.zoy.org/wtfpl/).
+**/
+
+
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 #include "vectorlib.h"
-#include "main.h"
+
+#define error_exit(...) {printf(__VA_ARGS__); return EXIT_FAILURE;}
+
+#define CONST_G 0.0000000000667384
+#define DOUBLE_EPSILON 0.0000000001
+
+void write_init(FILE* out1, FILE* out2, bool verb, long double m1, vector p1, vector v1, long double m2, vector p2, vector v2, long double dt, long double t_final, long double dt_output);
+
+void write_end(FILE* out1, FILE* out2, bool verb);
+
+void write_output(FILE* out1, FILE* out2, bool verb, long double t, vector p1, vector p2);
 
 int main(int argc, char* argv[]){
 
+   // parsing the arguments
    if(argc < 3)
       error_exit("Syntax error : Incorrect arguments, use : input_file output_file [-v] [-m filename].\r\n\r\n");
 
-   boolean use_verbatim = FALSE;
+   bool use_verbatim = false;
    FILE* matlab_file = NULL;
 
    FILE* input_file = fopen(argv[1],"r");
@@ -24,7 +47,7 @@ int main(int argc, char* argv[]){
 
       switch(argv[i][1]){
          case 'v' :
-            use_verbatim = TRUE;
+            use_verbatim = true;
             break;
          case 'm' :
             if(i+1 >= argc)
@@ -44,7 +67,7 @@ int main(int argc, char* argv[]){
    vector p10,p20,v1,v2,p11,p21;
    // masses
    long double m1,m2;
-   // times
+   // discretization parameters
    long double dt, t_final, dt_output;
 
    fscanf(input_file, "%Lf\r\n%Lf %Lf %Lf\r\n%Lf %Lf %Lf\r\n%Lf\r\n%Lf %Lf %Lf\r\n%Lf %Lf %Lf\r\n%Lf\r\n%Lf\r\n%Lf", &m1, &(p10.x), &(p10.y), &(p10.z), &(v1.x), &(v1.y), &(v1.z), &m2, &(p20.x), &(p20.y), &(p20.z), &(v2.x), &(v2.y), &(v2.z), &dt, &t_final, &dt_output );
@@ -88,7 +111,7 @@ int main(int argc, char* argv[]){
    return EXIT_SUCCESS;
 }
 
-void write_init(FILE* out1, FILE* out2, boolean verb, long double m1, vector p1, vector v1, long double m2, vector p2, vector v2, long double dt, long double t_final, long double dt_output){
+void write_init(FILE* out1, FILE* out2, bool verb, long double m1, vector p1, vector v1, long double m2, vector p2, vector v2, long double dt, long double t_final, long double dt_output){
    if(verb){
       printf("Read parameters\r\n-------------\r\n");
       printf("m1 \t %Lf\r\n p1 X \t %Lf\r\n p1 Y \t %Lf\r\n p1 Z  \t %Lf\r\n p1 U  \t %Lf\r\n p1 V  \t %Lf\r\n p1 W \t %Lf\r\n m2 \t %Lf\r\n p2 X \t %Lf\r\n p2 Y \t %Lf\r\n p2 Z \t %Lf\r\n p2 U \t %Lf\r\n p2 V \t %Lf\r\n p2 W \t %Lf\r\n dt \t %Lf\r\n endT \t %Lf\r\n outT \t %Lf\r\n", m1, p1.x, p1.y, p1.z, v1.x, v1.y, v1.z, m2, p2.x, p2.y, p2.z, v2.x, v2.y, v2.z, dt,t_final,dt_output);
@@ -101,7 +124,7 @@ void write_init(FILE* out1, FILE* out2, boolean verb, long double m1, vector p1,
    }
 }
 
-void write_end(FILE* out1, FILE* out2, boolean verb){
+void write_end(FILE* out1, FILE* out2, bool verb){
    if(out2 != NULL){
       fseek(out2, -3, SEEK_CUR);
       fprintf(out2, "];\r\n\r\n");
@@ -109,7 +132,7 @@ void write_end(FILE* out1, FILE* out2, boolean verb){
    }
 }
 
-void write_output(FILE* out1, FILE* out2, boolean verb, long double t, vector p1, vector p2){
+void write_output(FILE* out1, FILE* out2, bool verb, long double t, vector p1, vector p2){
    fprintf(out1, "%Lf\t%Lf\t%Lf\t%Lf\t%Lf\t%Lf\t%Lf\r\n", t, p1.x, p1.y, p1.z, p2.x,p2.y, p2.z);
    if(verb) printf("%Lf\t%Lf\t%Lf\t%Lf\t%Lf\t%Lf\t%Lf\r\n", t, p1.x, p1.y, p1.z, p2.x,p2.y, p2.z);
    if(out2 != NULL) fprintf(out2, "%Lf,%Lf,%Lf,%Lf,%Lf,%Lf,%Lf;\r\n", t, p1.x, p1.y, p1.z, p2.x,p2.y, p2.z);
